@@ -3,6 +3,7 @@ package ru.skollbranch.devintensive
 import org.junit.Test
 
 import org.junit.Assert.*
+import ru.skollbranch.devintensive.extentions.format
 import ru.skollbranch.devintensive.models.User
 import java.util.*
 
@@ -53,5 +54,24 @@ class ExampleUnitTest {
         val(id, firrstName, lastName) = getUserInfo()
 
         println("user = $id, $firrstName, $lastName")
+
+        println(".Component = ${user.component2()}")
+    }
+
+    @Test
+    fun dateFormate(){
+        val user = User("2", "John2", "Cena")
+        var user1 = user.copy(lastVisit = Date())
+        val user2 = User("100",
+         "firstName: String?",
+         "lastName: String?",
+         "avatar: String?",
+         1,
+         2,
+         Date(),
+         false
+        )
+
+        println(user2.lastVisit)
     }
 }
